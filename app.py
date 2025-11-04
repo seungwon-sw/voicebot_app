@@ -1,7 +1,6 @@
 import streamlit as st
-# from audiorecorder import audiorecorder
+from audiorecorder import audiorecorder
 from openai_service import stt, ask_gpt, tts
-from streamlit_audiorecorder import st_audiorec
 
 def main():
     st.set_page_config(
@@ -45,7 +44,7 @@ def main():
     col1, col2 = st.columns(2)
     with col1:
         st.subheader('녹음하기')
-        audio = st_audiorec()
+        audio = audiorecorder()
         # print(audio.duration_seconds)
 
         if (audio.duration_seconds > 0) and (not st.session_state['check_reset']):
