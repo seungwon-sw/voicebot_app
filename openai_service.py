@@ -1,10 +1,14 @@
-from dotenv import load_dotenv
+# from dotenv import load_dotenv
+# load_dotenv()  # .env 내용을 읽어서 환경변수로 설정
+
+# streamlit-cloud에서는 .env를 사용할 수 없으므로, 
+# secrets 설정(TOML방식)에 OPENAI_API_KEY를 설정해야 한다. 
+# OPENAI_API_KEY="api 키"  입력
+
 from openai import OpenAI
 import os
 import base64
 
-
-load_dotenv()  # .env 내용을 읽어서 환경변수로 설정
 
 client = OpenAI()
 
